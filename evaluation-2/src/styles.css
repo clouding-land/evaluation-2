@@ -1,0 +1,29 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+img {
+  width: 200px;
+  height: 200px;
+}
+.grid {
+  display: grid;
+  margin: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.navbar {
+  height: 40px;
+  /* width: 300px; */
+  /* margin-left: 500px; */
+  background: bisque;
+  display: "flex";
+  justify-content: space-around;
+  align-items: center;
+  gap: 25px;
+  padding: 5px;
+  /* border: 1px solid black; */
+}
+
+
+
