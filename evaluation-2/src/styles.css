@@ -5,6 +5,7 @@
 img {
   width: 200px;
   height: 200px;
+  border-radius:10px;
 }
 .grid {
   display: grid;
@@ -24,6 +25,20 @@ img {
   padding: 5px;
   /* border: 1px solid black; */
 }
+span{
+  margin-left:0;
+  margin-right:100px;
+}
+.product{
+  height: 500px;
+  width: 350px;
+  margin-left: 450px;
+  padding: 20px;
+  margin-top: 20px;
+  border:2px solid black;
+  border-radius:10px;
 
-
-
+}
+p{
+  
+}

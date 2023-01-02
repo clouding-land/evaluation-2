@@ -9,7 +9,7 @@ const SingleProduct = ({ image, title, id, price }) => {
       <img src={image} alt=" " />
       <h3>{title}</h3>
       {/* <p>Price: {price}</p> */}
-      <a href="/products/:{id}">More Info</a>
+      <Link to={"/products/" + id}>See More</Link>
       {/* <Link to={`${id}`}>
         <button>More Info</button>
       </Link> */}

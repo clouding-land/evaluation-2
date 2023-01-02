@@ -1,21 +1,32 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-// import data from "../Components/data.json";
+import { useState, useEffect } from "react";
 
-export default function DetailedProduct() {
-  const params = useParams();
-  console.log(params);
-
-  const getData = async () => {
-    try {
-      let res = await axios.get("");
-      // setData(res);
-      return res;
-    } catch (e) {
-      console.log(e);
-    }
-  };
-
-  return <div>Detailed page</div>;
-}
+function DetailedProduct(){
+  const { id } = useParams();
+  const [product, setProduct] = useState({});
+  const [isError, setisError] = useState(false);
+  useEffect(() => {
+    axios
+      .get("https://fakestoreapi.com/products/" + id)
+      .then((e) => setProduct(e.data))
+      .catch((err) => setisError(true));
+  }, []);
+  return (
+    <div className="product">
+      {isError ? (
+        <h1>Product Not Found</h1>
+      ) : (
+        <>
+          <img src={product.image} alt="" />
+          <h2>Product Name : {product.title}</h2>
+          <h3>Product Price : {product.price}</h3>
+          <p>Product Description:{product.description}</p>
+         
+        </>
+      )}
+    </div>
+  );
+};
+export default DetailedProduct;
